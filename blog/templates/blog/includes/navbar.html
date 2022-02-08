@@ -1,0 +1,8 @@
+{% block nav_links %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:home' %}">All Blog Posts</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'blog:create-post' %}">New Post</a>
+</li>
+{% endblock nav_links %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Stocks Katha{% endblock page_title %}
+{% block page_styles %}
+<style>
+    .welcome-note{
+        text-shadow: 2px 2px 5px #6173D4;
+    }
+</style>
+{% endblock page_styles %}
+
+
+{% block page_content %}
+<div class="container p-5">
+    <h1 class="welcome-note text-center">Welcome to Stocks Katha</h1>
+    <div class="blog-posts">
+        {% for post in post_list %}
+        <h3><a href="{% url 'blog:view-post' post.pk %}">{{post.title}}</a></h3>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock page_content %}

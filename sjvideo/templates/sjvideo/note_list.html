@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block page_title %}All Notes | Stock Market Tutorial By Shrenik Jain Sir{% endblock page_title %}
+{% block page_links_top %}
+<script src="https://cdn.tiny.cloud/1/7k6426m3rgtuf42vntbpffxgc683s0tlhsiza37pvkrtn81w/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+{% endblock page_links_top %}
+{% block page_styles %}{% endblock page_styles %}
+{% block page_scripts_top %}{% endblock page_scripts_top %}
+
+
+{% block nav_links %}
+{% include 'sjvideo/includes/navbar.html' %}
+{% endblock nav_links %}
+{% block page_content %}
+<div class="container mt-3 mb-5">
+    {% for video in video_list %}
+        <div class="card border rounded-top p-0 shadow">
+            <div class="header rounded-top bg-dark text-white p-2">
+                <h2>{{video.title}} <span class="fs-6"><a href="{% url 'sjvideo:view-lesson' video.pk %}"><i class="fa fa-external-link" aria-hidden="true"></i></a></span></h2>
+            </div>
+            <div class="notes p-3">
+                {{video.notes|safe}}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock page_content %}
+
+{% block page_links_bottom %}{% endblock page_links_bottom %}
+{% block page_scripts_bottom %}
+
+{% endblock page_scripts_bottom %}

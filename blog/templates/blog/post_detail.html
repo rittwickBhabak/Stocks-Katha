@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_title %}{{post.title}}{% endblock page_title %}
+{% block page_links_top %}{% endblock page_links_top %}
+{% block page_styles %}{% endblock page_styles %}
+{% block page_scripts_top %}{% endblock page_scripts_top %}
+{% block nav_links %}
+{% include 'blog/includes/navbar.html' %}
+{% endblock nav_links %}
+
+
+{% block page_content %}
+<div class="container mt-2 mb-5">
+    <h1>
+        {{post.title}}
+        <span class="fs-6"><a href="{% url 'blog:update-post' post.pk %}">update</a></span>
+    </h1>
+    <div class="post-content">
+        {{post.body|safe}}
+    </div>
+</div>
+{% endblock page_content %}
+
+{% block page_links_bottom %}{% endblock page_links_bottom %}
+{% block page_scripts_bottom %}{% endblock page_scripts_bottom %}

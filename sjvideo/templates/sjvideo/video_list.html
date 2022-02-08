@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Stock Market Tutorial By Shrenik Jain Sir{% endblock page_title %}
+{% block page_links_top %}{% endblock page_links_top %}
+{% block page_styles %}{% endblock page_styles %}
+{% block page_scripts_top %}{% endblock page_scripts_top %}
+
+{% block nav_links %}
+{% include 'sjvideo/includes/navbar.html' %}
+{% endblock nav_links %}
+
+{% block page_content %}
+<div class="container-fluid mt-3 mb-5">
+    <div class="my-2"></div>
+    <div class="w-50 m-auto">
+        <div class="list-group">
+            {% for video in video_list %}
+                <a href="{% url 'sjvideo:view-lesson' video.pk %}" class="list-group-item list-group-item-action">{{video.title}}</a>
+            {% empty %}
+                <p>No Videos Till Now. Add Video.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}
+
+
+
+
+
+{% block page_links_bottom %}{% endblock page_links_bottom %}
+{% block page_scripts_bottom %}{% endblock page_scripts_bottom %}

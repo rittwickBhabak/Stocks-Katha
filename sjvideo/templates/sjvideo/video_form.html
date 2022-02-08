@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Add Lesson | Stock Market Tutorial By Shrenik Jain Sir{% endblock page_title %}
+{% block page_links_top %}{% endblock page_links_top %}
+{% block page_styles %}
+<style>
+    label, input, textarea{
+        display: block;
+        width: 100%;
+    }
+    label[for="id_notes"], #id_notes{
+        display: none;
+    }
+    form{
+        margin-top: 20px;
+        width: 400px;
+        margin: auto;
+    }
+    label {
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+</style>
+{% endblock page_styles %}
+{% block page_scripts_top %}{% endblock page_scripts_top %}
+
+{% block nav_links %}
+{% include 'sjvideo/includes/navbar.html' %}
+{% endblock nav_links %}
+
+{% block page_content %}
+<div class="container-fluid mt-3 mb-5">
+    <div class="my-2"></div>
+    <form method="POST">  
+        <h5 class="text-start">Add Lesson</h5>
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="Save" class="btn btn-primary btn-block">
+
+    </form>
+</div>
+{% endblock page_content %}
+
+
+{% block page_links_bottom %}{% endblock page_links_bottom %}
+{% block page_scripts_bottom %}{% endblock page_scripts_bottom %}
